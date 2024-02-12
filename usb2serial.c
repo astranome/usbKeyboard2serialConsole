@@ -1,6 +1,6 @@
 /*
  * The MIT License (MIT)
- *
+ * Astra Researh edition ******************************
  * Copyright (c) 2022 No0ne (https://github.com/No0ne)
  *
  * Permission is hereby granted, free of charge, to any person obtaining a copy
@@ -23,7 +23,7 @@
  *
  */
 
-#define DEBUG 1
+#define DEBUG 1 
 
 #include "hardware/gpio.h"
 #include "bsp/board.h"
@@ -104,15 +104,15 @@ uint8_t const hid2ascii[] = {
   '/',
   0x00,		//CAPS
   0x00,		//F1
-  0x00,		//F2
-  0x00,		//F3
-  0x00,		//F4
-  0x00,		//F5
-  0x00,		//F6
-  0x00,		//F7
-  0x00,		//F8
-  0x00,		//F9
-  0x00,		//F10
+  0x71,		//F2
+  0x72,		//F3
+  0x73,		//F4
+  0x74,		//F5
+  0x75,		//F6
+  0x76,		//F7
+  0x77,		//F8
+  0x43,		//F9
+  0x79,		//F10
   0x00,		//F11
   0x00,		//F12
   0x00,		//PrtScr
@@ -121,13 +121,13 @@ uint8_t const hid2ascii[] = {
   0x00,		//Ins
   0x00,		//Home
   0x00,		//PgUp
-  0x00,		//Del
+  0x04,		//Del
   0x00,		//End
   0x00,		//PgDn
-  0x00,		//Right-Arr
-  0x00,		//Left-Arr
-  0x00,		//Down-Arr
-  0x00,		//Up-Arr
+  0x06,		//Right-Arr
+  0x02,		//Left-Arr
+  0x0E,		//Down-Arr
+  0x10,		//Up-Arr
   0x00,		//NUMPAD ----NumLock
   0x00,		// /
   0x00,		// *
@@ -153,22 +153,22 @@ uint8_t const hid2asciiCtrl[] = {
   0x00, 
   0x00, 
   0x00, 
-  0x01, 	//^A
-  0x02,
-  0x03,
-  0x04,
-  0x05,
-  0x06,
+  0x01, 	//^A <<<<--
+  0x02, 	//^B <---
+  0x03, 	//^C
+  0x04, 	//^D del
+  0x05, 	//^E
+  0x06,		//^F --->
   0x07,
-  0x08,
-  0x09,
+  0x08,		//^H BACKSPACE <-
+  0x09,		//^I TAB
   0x0A,
   0x0B,
   0x0C,
-  0x0D,
-  0x0E,
-  0x0F,
-  0x10,
+  0x0D,		//^M CARRIAGE RETURN
+  0x0E,		//^N down arrow
+  0x0F,		//^O lock/unlock input
+  0x10,		//^P up ^ arrow ^^^
   0x11,
   0x12,
   0x13,
