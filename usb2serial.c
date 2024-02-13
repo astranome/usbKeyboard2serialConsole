@@ -103,7 +103,7 @@ uint8_t const hid2ascii[] = {
   '.',
   '/',
   0x00,		//CAPS
-  0x00,		//F1
+  0x70,		//F1
   0x71,		//F2
   0x72,		//F3
   0x73,		//F4
@@ -111,7 +111,7 @@ uint8_t const hid2ascii[] = {
   0x75,		//F6
   0x76,		//F7
   0x77,		//F8
-  0x43,		//F9
+  0x78,		//F9
   0x79,		//F10
   0x00,		//F11
   0x00,		//F12
@@ -119,11 +119,11 @@ uint8_t const hid2ascii[] = {
   0x00,		//ScrlLock
   0x00,		//Pause/Break
   0x00,		//Ins
-  0x00,		//Home
-  0x00,		//PgUp
+  0x47,		//Home
+  0x49,		//PgUp
   0x04,		//Del
   0x00,		//End
-  0x00,		//PgDn
+  0x16,		//PgDn
   0x06,		//Right-Arr
   0x02,		//Left-Arr
   0x0E,		//Down-Arr
@@ -174,7 +174,7 @@ uint8_t const hid2asciiCtrl[] = {
   0x13,
   0x14,
   0x15,
-  0x16,
+  0x16,		//^V page down
   0x17,
   0x18,
   0x19,
@@ -334,6 +334,7 @@ void tuh_hid_report_received_cb(uint8_t dev_addr, uint8_t instance, uint8_t cons
         };
 
       #if DEBUG
+      if ((report[2]<=0x45) && (report[2]>=0x3A)) printf("%c",0);
       if (ch) printf("%c",ch);
       //printf("keyboard %02x %02x %02x  \n", report[0], report[1], report[2]);
       #endif
